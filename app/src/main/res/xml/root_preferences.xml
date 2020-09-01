@@ -1,0 +1,33 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="@string/display_preferences">
+
+        <ListPreference
+            app:entries="@array/theme_entries"
+            app:entryValues="@array/theme_values"
+            app:key="theme"
+            app:title="@string/theme"
+            app:useSimpleSummaryProvider="true" />
+
+        <ListPreference
+            app:entries="@array/dark_colour_entries"
+            app:entryValues="@array/dark_colour_values"
+            app:key="dark_colour"
+            app:title="@string/dark_accent_colour"
+            app:useSimpleSummaryProvider="true" />
+
+        <ListPreference
+            app:entries="@array/light_colour_entries"
+            app:entryValues="@array/light_colour_values"
+            app:key="light_colour"
+            app:title="@string/light_accent_colour"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+
+</PreferenceScreen>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#2962FF</color>
+    <color name="colorPrimaryDark">#022073</color>
+    <color name="colorPrimaryVariant">#000000</color>
+    <color name="colorOnPrimary">#000000</color>
+    <color name="colorAccent">#F44336</color>
+    <color name="colorSecondary">#2962FF</color>
+    <color name="colorSecondaryVariant">#0039CB</color>
+    <color name="colorOnSecondary">#000000</color>
+    <color name="colorError">#F44336</color>
+    <color name="colorOnError">#FFFFFF</color>
+    <color name="colorSurface">#F1F1F1</color>
+    <color name="colorOnSurface">#212121</color>
+    <color name="colorBackground">#FFFFFF</color>
+    <color name="colorOnBackground">#212121</color>
+    <color name="colorText">#212121</color>
+    <color name="colorSwitchText">#F44336</color>
+
+    <color name="darkColorPrimary">#2962FF</color>
+    <color name="darkColorPrimaryDark">#022073</color>
+    <color name="darkColorPrimaryVariant">#000000</color>
+    <color name="darkColorOnPrimary">#000000</color>
+    <color name="darkColorAccent">#F44336</color>
+    <color name="darkColorSecondary">#2962FF</color>
+    <color name="darkColorSecondaryVariant">#0039CB</color>
+    <color name="darkColorOnSecondary">#000000</color>
+    <color name="darkColorError">#F44336</color>
+    <color name="darkColorOnError">#FFFFFF</color>
+    <color name="darkColorSurface">#F1F1F1</color>
+    <color name="darkColorOnSurface">#212121</color>
+    <color name="darkColorBackground">#FFFFFF</color>
+    <color name="darkColorOnBackground">#212121</color>
+    <color name="darkColorText">#212121</color>
+    <color name="darkColorSwitchText">#F44336</color>
+
+</resources>
