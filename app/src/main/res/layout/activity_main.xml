@@ -186,5 +186,17 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent=".35" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabShare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:focusable="auto"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button_run"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPassword"
+        app:srcCompat="@android:drawable/ic_menu_share" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

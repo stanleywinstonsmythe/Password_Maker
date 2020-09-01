@@ -23,6 +23,8 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.util.Map;
 
 
@@ -38,9 +40,21 @@ public class MainActivity extends AppCompatActivity {
     private SeekBar mSeekBarPasswordLength;
     private TextView mTextViewPasswordLength;
     private MenuItem mMenuItemOptions;
+    private FloatingActionButton fabShare;
+    private FloatingActionButton fabGo;
 
     private int passwordLength = 25;
     private int minPasswordLength = 5;
+
+    private String mPassword;
+
+    private final String PASSWORD_KEY = "password key";
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(PASSWORD_KEY, mPassword);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,8 +73,12 @@ public class MainActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayShowTitleEnabled(false);
         }
 
+        if (savedInstanceState != null) {
+            mPassword = savedInstanceState.getString(PASSWORD_KEY,"");
+        }
 
         mTextViewPassword = findViewById(R.id.textViewPassword);
+
         mSwitchLowerCase = findViewById(R.id.switch_lower);
         mSwitchBasicSymbols = findViewById(R.id.switch_basic_symbols);
         mSwitchNumbers = findViewById(R.id.switch_numbers);
@@ -69,6 +87,25 @@ public class MainActivity extends AppCompatActivity {
         mButtonGenerate = findViewById(R.id.button_run);
         mSeekBarPasswordLength = findViewById(R.id.seekBarPasswordLength);
         mTextViewPasswordLength = findViewById(R.id.textViewPasswordLength);
+        fabShare = findViewById(R.id.fabShare);
+
+        if (mPassword!=""){
+            mTextViewPassword.setText(mPassword);
+            fabShare.setClickable(true);
+        }
+
+        fabShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT, mTextViewPassword.getText());
+                sendIntent.setType("text/plain");
+
+                Intent shareIntent = Intent.createChooser(sendIntent, null);
+                startActivity(shareIntent);
+            }
+        });
 
         mButtonGenerate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,14 +120,15 @@ public class MainActivity extends AppCompatActivity {
                             Toast.LENGTH_LONG).show();
                 }
                 else {
-                    mTextViewPassword.setText(PasswordGenerator.passwordGenerate(
+                    mPassword = PasswordGenerator.passwordGenerate(
                             mSwitchUpperCase.isChecked(),
                             mSwitchLowerCase.isChecked(),
                             mSwitchNumbers.isChecked(),
                             mSwitchBasicSymbols.isChecked(),
                             mSwitchSpecialSymbols.isChecked(),
-                            passwordLength, 2)
-                    );
+                            passwordLength, 2);
+                    mTextViewPassword.setText(mPassword);
+                    fabShare.setClickable(true);
                 }
             }
         });
