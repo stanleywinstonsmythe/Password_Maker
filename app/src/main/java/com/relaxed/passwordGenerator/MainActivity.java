@@ -89,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
         mTextViewPasswordLength = findViewById(R.id.textViewPasswordLength);
         fabShare = findViewById(R.id.fabShare);
 
+
         if (mPassword!=""){
             mTextViewPassword.setText(mPassword);
             fabShare.setClickable(true);
