@@ -31,4 +31,6 @@
     <string name="display_preferences">Display Preferences</string>
     <string name="dark_accent_colour">Dark Accent Colour</string>
     <string name="light_accent_colour">Light Accent Colour</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -11,9 +11,11 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".SettingsActivity"
+            android:configChanges="uiMode"
             android:label="@string/title_activity_settings">
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:configChanges="uiMode">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

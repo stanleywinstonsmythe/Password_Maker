@@ -65,7 +65,7 @@ public class PasswordGenerator {
             passwordOk = doesPasswordMeetMinCriteria(password, upperCase, lowerCase, numbers, basicSymbols,
                     specialSymbols, minNumberOfCharactersOfEach);
         }
-        System.out.println(checkLoops);
+
         return password;
     }
 
